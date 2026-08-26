@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #080b12;
+  --color-surface: #0d121c;
+  --color-panel: #141a25;
+  --color-raised: #1b2432;
+  --color-gold: #e8c878;
+  --color-gold-deep: #c9a85c;
+  --color-ink: #f4f5f7;
+  --color-muted: #8f99aa;
+  --color-danger: #f87171;
+}
+
+@theme inline {
+  --font-display: var(--font-cinzel), Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(55rem 30rem at 88% -8%, rgb(96 130 200 / 0.09), transparent 60%),
+    radial-gradient(45rem 26rem at -5% 2%, rgb(232 200 120 / 0.055), transparent 55%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+}
+
+::selection {
+  background: rgb(232 200 120 / 0.28);
+}
+
+.text-gold-gradient {
+  background-image: linear-gradient(105deg, #f5e3b0 0%, #e8c878 45%, #b9924b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3444 transparent;
+}
