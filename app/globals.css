@@ -24,11 +24,23 @@ html {
 
 body {
   background-color: var(--color-bg);
-  background-image:
-    radial-gradient(55rem 30rem at 88% -8%, rgb(96 130 200 / 0.09), transparent 60%),
-    radial-gradient(45rem 26rem at -5% 2%, rgb(232 200 120 / 0.055), transparent 55%);
-  background-attachment: fixed;
   color: var(--color-ink);
+}
+
+/* Genshin-inspired scenic backdrop: twilight sky, moon, aurora,
+   stars and layered mountain silhouettes (public/backgrounds). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgb(8 11 18 / 0.55) 0%, rgb(8 11 18 / 0.22) 45%, rgb(8 11 18 / 0.6) 100%),
+    url("/backgrounds/teyvat-night.svg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat;
 }
 
 ::selection {
